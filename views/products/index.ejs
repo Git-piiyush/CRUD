@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+</head>
+
+<body>
+    <h1>
+        <%= category %> products!!
+    </h1>
+    <ol>
+        <% for(let p of products){ %>
+            <li>
+                <a href="/shop/<%= p._id %>">
+                    <%= p.name%>
+                </a>
+            </li>
+
+            <% }%>
+    </ol>
+
+    <div>
+        <a style="color:black ; text-decoration:none " href="/shop/new"> <button>Add new product</buttton></a>
+
+    </div>
+
+    <% if(category !=='All' ){ %>
+        <a href="/shop">Show me all</a>
+        <%} %>
+
+</body>
+
+</html>
